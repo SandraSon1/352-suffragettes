@@ -1,0 +1,39 @@
+
+
+
+/* -------- Base styles - these will always apply, no matter what. -------- */
+
+html {
+    font-family: 'Nunito', sans-serif;
+    /* Here we say that every piece of text should be in the Roboto font we loaded from Google in the HTML header; if that can't load, use the browser default sans serif font. */
+
+    font-size: 16px;
+    /* This tells every piece of text should default to 16px in size. We'll use other values as multipliers of this later, but this ensures styling consistency across browsers/platforms. */
+
+    overflow-x: hidden;
+    /* This is telling the browser to hide anything that goes off the left and right edges of the page, and not let the user scroll to see it. */
+  
+
+
+}
+
+body {
+    width: 100%;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
