@@ -10,38 +10,52 @@
   firebase.initializeApp(config);
 
 
-//Reference messages collection
-var messagesRef = firebase.database().ref('messages');
+// //Reference messages collection
+// var messagesRef = firebase.database().ref('messages');
 
 
 
 
-//listen for form submit
-document.getElementById('serial').addEventListener('submit', submitForm);
+// //listen for form submit
+// document.getElementById('serial').addEventListener('submit', submitForm);
 
-//submit form
-function submitForm(e){
-	e.preventDefault();
+// //submit form
+// function submitForm(e){
+// 	e.preventDefault();
 
-	//Get values
-	var serialNumber = getInputVal('serialNumber');
+// 	//Get values
+// 	var serialNumber = getInputVal('serialNumber');
 
-	//save message
-	saveMessage(serialNumber);
+// 	//save message
+// 	saveMessage(serialNumber);
 
-	console.log(serialNumber);
-}
+// 	console.log(serialNumber);
+// }
 
-//function to get get form values
-function getInputVal(id){
-	return document.getElementById(id).value;
-}
+// //function to get get form values
+// function getInputVal(id){
+// 	return document.getElementById(id).value;
+// }
 
 
-//save message to firebase
-function saveMessage(serialNumber){
-	var newMessageRef =  messagesRef.push();
-	newMessageRef.set({
-		serialNumber: serialNumber
-	});
-}
+// //save message to firebase
+// function saveMessage(serialNumber){
+// 	var newMessageRef =  messagesRef.push();
+// 	newMessageRef.set({
+// 		serialNumber: serialNumber
+// 	});
+// }
+
+var rootRef = firebase.database().ref();
+var masterRef = rootRef.child("masterSheet");
+
+masterRef.on("value", function(snapshot) {
+  var newPost = snapshot.val();
+
+  console.log("Number: " + newPost.0);
+    
+},
+  function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+
