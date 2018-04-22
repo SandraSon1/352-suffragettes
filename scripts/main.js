@@ -47,15 +47,31 @@
 // }
 
 var rootRef = firebase.database().ref();
-var masterRef = rootRef.child("masterSheet");
+var masterRef = rootRef.child("messages");
 
-masterRef.on("value", function(snapshot) {
+
+masterRef.orderByChild("number").equalTo(1).on("child_added", function(snapshot) {
+  var newPost = snapshot.val();
+  console.log(newPost.firstname);
+
+  document.getElementById("text2").innerHTML = "Name: " + newPost.firstname + " " +newPost.surname + "<br>City: " + newPost.locality; 
+});
+
+
+
+
+masterRef.on("child_added", function(snapshot) {
   var newPost = snapshot.val();
 
-  console.log("Number: " + newPost.0);
-    
+  // console.log("Name: " + newPost.firstname);
+  //     console.log("Name: " + newPost.surname);
+  //       console.log("Name: " + newPost.locality);
+document.getElementById("text").innerHTML = "Name: " + newPost.firstname + " " +newPost.surname + "<br>City: " + newPost.locality; 
 },
+
   function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
+
+
 
