@@ -33,7 +33,7 @@ function submitForm(e){
 
 	console.log(serialNumber);
 
-  
+
 }
 
 //function to get get form values
@@ -53,6 +53,23 @@ function saveMessage(serialNumber){
 
 
 
+var rootRef = firebase.database().ref();
+var masterRef = rootRef.child("messages");
+
+//retrieves data 
+masterRef.once("child_added", function(snapshot) {
+  var newPost = snapshot.val();
+
+  // console.log("Name: " + newPost.firstname);
+  //     console.log("Name: " + newPost.surname);
+  //       console.log("Name: " + newPost.locality);
+document.getElementById("text").innerHTML = "Serial Number: " + newPost.serialNumber; },
+
+  function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+
+});
+
 //reference to database .child reference the child
 var rootRef = firebase.database().ref();
 var masterRef = rootRef.child("SUFPART1");
@@ -65,7 +82,11 @@ masterRef.orderByChild("NUMBER").equalTo(listnumber).on("child_added", function(
   document.getElementById("text2").innerHTML = "Name: " + newPost.TTL +" "+ newPost.FIRST_NAME + " " +newPost.SURNAME+ "<br>Locality: " + newPost.LOCALITY + "<br>Town/Suburb: " + newPost.TOWN_SUBUR; 
 });
 
+
+
+
 }
+
 
 
 
