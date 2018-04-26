@@ -53,29 +53,29 @@ function saveMessage(serialNumber){
 
 
 
-var rootRef = firebase.database().ref();
-var masterRef = rootRef.child("messages");
 
-//retrieves data 
-masterRef.once("child_added", function(snapshot) {
-  var newPost = snapshot.val();
-
-  // console.log("Name: " + newPost.firstname);
-  //     console.log("Name: " + newPost.surname);
-  //       console.log("Name: " + newPost.locality);
-document.getElementById("text").innerHTML = "Serial Number: " + newPost.serialNumber; },
-
-  function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
-
-});
 
 //reference to database .child reference the child
+
 var rootRef = firebase.database().ref();
 var masterRef = rootRef.child("SUFPART1");
-var listnumber = 1;
-//retrieves data 
-masterRef.orderByChild("NUMBER").equalTo(listnumber).on("child_added", function(snapshot) {
+var messages = rootRef.child("messages");
+
+
+
+messages.once("child_added", function(snapshot) {
+  var newPost = snapshot.val();
+
+
+document.getElementById("text").innerHTML = "Serial Number: " + newPost.serialNumber; },
+
+);
+
+
+//retrieves suffragette data
+
+//I tried to pass serialNumber into equalTo() but it won't work
+masterRef.orderByChild("NUMBER").equalTo(6).on("child_added", function(snapshot) {
   var newPost = snapshot.val();
   console.log(newPost.FIRST_NAME);
 
@@ -87,21 +87,6 @@ masterRef.orderByChild("NUMBER").equalTo(listnumber).on("child_added", function(
 
 }
 
-
-
-
-// masterRef.on("child_added", function(snapshot) {
-//   var newPost = snapshot.val();
-
-//   // console.log("Name: " + newPost.firstname);
-//   //     console.log("Name: " + newPost.surname);
-//   //       console.log("Name: " + newPost.locality);
-// document.getElementById("text").innerHTML = "Name: " + newPost.firstname + " " +newPost.surname + "<br>City: " + newPost.locality; 
-// },
-
-//   function (errorObject) {
-//   console.log("The read failed: " + errorObject.code);
-// });
 
 
 
