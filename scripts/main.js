@@ -35,6 +35,8 @@ document.getElementById('init').addEventListener('click', function(event) {
 masterRef.on('child_changed', function(snapshot) {
     var val = snapshot.val();
     console.log(val.FIRST_NAME);
-    document.getElementById("log").innerHTML = "Name: " + val.FIRST_NAME;
+    document.getElementById("text2").innerHTML = val.TTL +" "+ val.FIRST_NAME + " " +val.SURNAME;
+    document.getElementById("text3").innerHTML = val.TOWN_SUBUR +"<br> "+ val.LOCALITY;
 });
+
 

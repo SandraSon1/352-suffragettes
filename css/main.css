@@ -22,18 +22,94 @@ body {
    
 }
 
+#firstpage{
+	background-color: #E5D9D8;
+}
+
+
+.flex-container{
+	height:100%;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+}
+
+h1{
+	font-family: 'Palanquin', sans-serif;
+	letter-spacing: 0.7em;
+	font-size: 3em;
+}
+
+
+#secondpage{
+	background-color: #E5D9D8;
+
+}
 
 
 
 
+#overlay {
+    position: fixed; 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.85); 
+    z-index: 2; 
+    cursor: pointer; 
 
+}
 
+#details {
+    position: relative;
+    top: 50%; 
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    color: white;
+    /*background-color: red;*/
+    text-align: center;
+    letter-spacing: 0.5em;
+    line-height: 2.0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
 
+   
+    }
 
+    #text2{
+        font-family: 'Palanquin', sans-serif;
+        color: #FF604F;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 3;
+    }
 
+    #map{
+        border-radius: 6px;
+        background-color: #FF604F;
+        border:none;
+        font-size: 12px;
+        letter-spacing:0.5em;
+        padding: 10px;
+        color:white;
+        text-align: center;
+        text-decoration: none;
+        opacity: 0;
+        -webkit-animation-name: fadein;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-delay: 4s;
+        -webkit-animation-fill-mode: forwards;
+        }
 
-
-
+    @-webkit-keyframes fadein {
+   from {opacity: 0;}
+    to   { opacity: 1; }
+}
+ 
 
 
 
