@@ -25,36 +25,29 @@
         height: 100%;
         margin: 0;
         padding: 0;
+
+
+      }
+
+      #firstheading{
+        font-size: 1.5em;
+      }
+
+      p{
+        color: #91D4FA;
+        text-align: center;
+        font-size: 1.2em;
+        letter-spacing: 0.2em;
       }
     </style>
     </head>
-<!-- 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head> -->
+
   <body>
      <div class="icon-bar">
   <a href="#"></a> 
   <a class ="bar" href="index.html"><img src="home.png" style="height:35px; width:35px;"/></a> 
   <a class ="bar" href="serialnumber.html"><img src="pen.png" style="height:35px; width:35px;"/></a> 
-  <a class ="bar" href="map.html"><img src="map.png" style="height:35px; width:35px;"/></a>
+  <a class ="bar" href="map.html" style="background-color:#000;"><img src="map.png" style="height:35px; width:35px;"/></a>
   <a href="#"></a> 
 </div>
     <div id="map"></div>
@@ -62,11 +55,11 @@
 
     <script type="text/javascript">
     var locations = [
-      ['Ponsonby, Auckland', -36.8488, 174.7381, 4],
-      ['Oriental Bay, Wellington', -41.2913, 174.7941, 5],
-      ['Riccarton, Christchurch', -43.5300, 172.5972, 3],
-      ['Dunedin', -45.8788, 170.5028, 2],
-      ['Balclutha', -46.2390, 169.7367, 1]
+      ['<h2 id="firstHeading" class="firstHeading">Ponsonby, Auckland</h2>'+'<p>Emma Hobbs</p>', -36.8488, 174.7381, 4],
+      ['<h2 id="firstHeading" class="firstHeading">Oriental Bay, Wellington</h2>'+'<p>Joan Arcus</p>', -41.2913, 174.7941, 5],
+      ['<h2 id="firstHeading" class="firstHeading">Riccarton, Christchurch</h2>'+'<p>K W Sheppard</p>', -43.5300, 172.5972, 3],
+      ['<h2 id="firstHeading" class="firstHeading">Dunedin</h2>'+'<p>A Brady</p>', -45.8788, 170.5028, 2],
+      ['<h2 id="firstHeading" class="firstHeading">Balclutha</h2>'+'<p>Amelia J Adams</p>', -46.2390, 169.7367, 1]
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -91,6 +84,12 @@
           infowindow.open(map, marker);
         }
       })(marker, i));
+
+     
+        google.maps.event.addListener(marker, 'click', function() {
+          map.panTo(this.getPosition());
+          map.setZoom(11);
+        });
     }
 
 

@@ -61,9 +61,9 @@ h3{
 }
 
 div#image2{
-     position: fixed;
-    top: 100;
-    left: 45%;
+     position: relative;
+    top: -70;
+  /*  left: 45%;*/
     
  
     align-self: flex-start;
@@ -147,9 +147,9 @@ div#celebrate{
     }
 
     #text2{
-        font-family: 'Alegreya Sans SC', sans-serif;
+        font-family: 'Merienda', cursive;
         color: #91D4FA;
-        font-size: 2em;
+        font-size: 1.7em;
         font-weight: bold;
         line-height: 1.6;
     }
