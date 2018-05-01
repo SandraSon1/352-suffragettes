@@ -1,3 +1,25 @@
+.icon-bar {
+    width: 100%;
+    background-color: #555;
+    /*overflow: auto;*/
+    position: fixed;
+  bottom: 0;
+}
+
+.icon-bar a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar .bar:hover {
+    background-color: #000;
+}
+
 
 
 
@@ -92,7 +114,7 @@ div#celebrate{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.9); 
+    background-color: rgba(0,0,0,0.93); 
     z-index: 2; 
     cursor: pointer; 
 
