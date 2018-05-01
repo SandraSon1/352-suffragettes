@@ -20,14 +20,14 @@ var masterRef = rootRef.child("SUFPART1");
 var log = document.getElementById('log');
 
 document.getElementById('init').addEventListener('click', function(event) {
-    var username = prompt('What user do you want to create?');
+    var username = prompt('Enter Number');
    
     masterRef.once('value', function(snapshot) {
         if (snapshot.hasChild(username)) {
             masterRef.child(username).update({ NUMBER: username });
         }
         else {
-            alert("That signature doesn't exists");
+            alert("Signature doesn't exists");
         }
     });
 });

@@ -4,7 +4,7 @@
 /* -------- Base styles - these will always apply, no matter what. -------- */
 
 html {
-    font-family: 'Nunito', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
     /* Here we say that every piece of text should be in the Roboto font we loaded from Google in the HTML header; if that can't load, use the browser default sans serif font. */
 
     font-size: 16px;
@@ -22,8 +22,30 @@ body {
    
 }
 
-#firstpage{
-	background-color: #E5D9D8;
+h3{
+    font-family: 'Merienda', cursive;
+    font-weight: lighter;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+   /* line-height: 0;*/
+}
+
+#image{
+ 
+  position:relative;
+  align-self: flex-end;
+  margin-right: 10%;
+
+}
+
+div#image2{
+     position: fixed;
+    top: 100;
+    left: 45%;
+    
+ 
+    align-self: flex-start;
+
 }
 
 
@@ -32,19 +54,31 @@ body {
 	display: flex;
 	justify-content: center;
   	align-items: center;
+    flex-direction: column;
 }
 
-h1{
-	font-family: 'Palanquin', sans-serif;
-	letter-spacing: 0.7em;
+/*#firstcontainer{
+    flex-direction: column;
+}*/
+
+h2{
+	font-family: 'Alegreya Sans SC', sans-serif;
+	letter-spacing: 0.1em;
 	font-size: 3em;
+    line-height: 0;
+    font-weight: lighter;
+}
+
+div#celebrate{
+    font-family: 'Merienda', cursive;
+    font-weight: lighter;
+    font-size: 0.8em;
+    text-align: right;
+    position: relative;
+   /* margin-bottom: -80px;*/
 }
 
 
-#secondpage{
-	background-color: #E5D9D8;
-
-}
 
 
 
@@ -58,7 +92,7 @@ h1{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.85); 
+    background-color: rgba(0,0,0,0.9); 
     z-index: 2; 
     cursor: pointer; 
 
@@ -80,17 +114,27 @@ h1{
    
     }
 
-    #text2{
-        font-family: 'Palanquin', sans-serif;
-        color: #FF604F;
-        font-size: 2em;
-        font-weight: bold;
-        line-height: 3;
+    #text{
+        color:#DCDCDC;
+        font-style: italic;
+        font-family: 'Alegreya Sans SC', sans-serif;
+        line-height: 4;
+        font-weight: lighter;
+        letter-spacing: 0.2em;
+        font-size: 1.3em;
     }
 
-    #map{
+    #text2{
+        font-family: 'Alegreya Sans SC', sans-serif;
+        color: #91D4FA;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 1.6;
+    }
+
+    #mapbutt{
         border-radius: 6px;
-        background-color: #FF604F;
+        background-color: #91D4FA;
         border:none;
         font-size: 12px;
         letter-spacing:0.5em;
@@ -101,7 +145,7 @@ h1{
         opacity: 0;
         -webkit-animation-name: fadein;
         -webkit-animation-duration: 3s;
-        -webkit-animation-delay: 4s;
+        -webkit-animation-delay: 3s;
         -webkit-animation-fill-mode: forwards;
         }
 
@@ -110,6 +154,18 @@ h1{
     to   { opacity: 1; }
 }
  
+    #init{
+     font-family: 'Alegreya Sans SC', sans-serif;
+     border-radius: 6px;
+        background-color: #91D4FA;
+        border:none;
+        font-size: 0.9em;
+        letter-spacing:0.5em;
+        padding: 10px;
+        color:white;
+        text-align: center;
+        text-decoration: none;
+    }
 
 
 
