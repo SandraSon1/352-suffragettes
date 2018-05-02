@@ -1,9 +1,9 @@
 .icon-bar {
     width: 100%;
     background-color: #555;
-    /*overflow: auto;*/
     position: fixed;
-  bottom: 0;
+    z-index: 5;
+    bottom: 0;
 }
 
 .icon-bar a {
@@ -21,22 +21,9 @@
 }
 
 
-
-
-/* -------- Base styles - these will always apply, no matter what. -------- */
-
 html {
-    /*font-family: 'Nunito', sans-serif;*/
-    /* Here we say that every piece of text should be in the Roboto font we loaded from Google in the HTML header; if that can't load, use the browser default sans serif font. */
-
-    font-size: 16px;
-    /* This tells every piece of text should default to 16px in size. We'll use other values as multipliers of this later, but this ensures styling consistency across browsers/platforms. */
-
-    overflow-x: hidden;
-    /* This is telling the browser to hide anything that goes off the left and right edges of the page, and not let the user scroll to see it. */
-  
-
-
+   font-size: 16px;
+   overflow-x: hidden;
 }
 
 body {
@@ -49,7 +36,7 @@ h3{
     font-weight: lighter;
     font-size: 1em;
     letter-spacing: 0.1em;
-   /* line-height: 0;*/
+   
 }
 
 #image{
@@ -61,13 +48,9 @@ h3{
 }
 
 div#image2{
-     position: relative;
+    position: relative;
     top: -70;
-  /*  left: 45%;*/
-    
- 
     align-self: flex-start;
-
 }
 
 
@@ -79,9 +62,7 @@ div#image2{
     flex-direction: column;
 }
 
-/*#firstcontainer{
-    flex-direction: column;
-}*/
+
 
 h2{
 	font-family: 'Alegreya Sans SC', sans-serif;
@@ -97,13 +78,8 @@ div#celebrate{
     font-size: 0.8em;
     text-align: right;
     position: relative;
-   /* margin-bottom: -80px;*/
+   
 }
-
-
-
-
-
 
 #overlay {
     position: fixed; 
@@ -126,7 +102,6 @@ div#celebrate{
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     color: white;
-    /*background-color: red;*/
     text-align: center;
     letter-spacing: 0.5em;
     line-height: 2.0;
@@ -136,57 +111,138 @@ div#celebrate{
    
     }
 
-    #text{
-        color:#DCDCDC;
-        font-style: italic;
-        font-family: 'Alegreya Sans SC', sans-serif;
-        line-height: 4;
-        font-weight: lighter;
-        letter-spacing: 0.2em;
-        font-size: 1.3em;
+#text{
+    color:#DCDCDC;
+    font-style: italic;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    line-height: 4;
+    font-weight: lighter;
+    letter-spacing: 0.2em;
+    font-size: 1.3em;
+}
+
+#text2{
+    font-family: 'Merienda', cursive;
+    color: #91D4FA;
+    font-size: 1.7em;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+#mapbutt{
+    border-radius: 6px;
+    background-color: #91D4FA;
+    border:none;
+    font-size: 12px;
+    letter-spacing:0.5em;
+    padding: 10px;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 3s;
+    -webkit-animation-fill-mode: forwards;
+    }
+
+@-webkit-keyframes fadein {
+from {opacity: 0;}
+to   { opacity: 1; }
+}
+
+#init{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    border-radius: 6px;
+    background-color: #91D4FA;
+    border:none;
+    font-size: 0.9em;
+    letter-spacing:0.5em;
+    padding: 10px;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+img#pen2{
+    width: 100px;
+    height: 100px;
+}
+
+img#pen{
+    width:190px;
+    height:19px;
+}
+
+@media (max-width: 320px){
+
+    h2{
+        font-size: 2.5em;
+    }
+
+    div#celebrate{
+        font-size: 0.7em;
     }
 
     #text2{
-        font-family: 'Merienda', cursive;
-        color: #91D4FA;
-        font-size: 1.7em;
-        font-weight: bold;
-        line-height: 1.6;
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 550px){
+    h2{
+        font-size: 5.3em;
     }
 
-    #mapbutt{
-        border-radius: 6px;
-        background-color: #91D4FA;
-        border:none;
-        font-size: 12px;
-        letter-spacing:0.5em;
-        padding: 10px;
-        color:white;
-        text-align: center;
-        text-decoration: none;
-        opacity: 0;
-        -webkit-animation-name: fadein;
-        -webkit-animation-duration: 3s;
-        -webkit-animation-delay: 3s;
-        -webkit-animation-fill-mode: forwards;
-        }
+    div#celebrate{
+        font-size: 1.2em;
+    }
 
-    @-webkit-keyframes fadein {
-   from {opacity: 0;}
-    to   { opacity: 1; }
-}
- 
+    h3{
+    font-size: 1.6em;
+    }
+
     #init{
-     font-family: 'Alegreya Sans SC', sans-serif;
-     border-radius: 6px;
-        background-color: #91D4FA;
-        border:none;
-        font-size: 0.9em;
-        letter-spacing:0.5em;
-        padding: 10px;
-        color:white;
-        text-align: center;
-        text-decoration: none;
+    
+    font-size: 1.5em;
+    
+}
+
+img#pen2{
+    width:160px;
+    height:160px;
+}
+
+#text{
+  
+    font-size: 2.3em;
+}
+
+#text2{
+    
+    font-size: 2.7em;
+    
+}
+
+#mapbutt{
+   
+    font-size: 20px;
+    
+    }
+
+    #text3{
+   
+    font-size: 1.7em;
+    
+    }
+
+    img#pen{
+    width:370px;
+    height:37px;
+}
+
+
     }
 
 
